@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite for iOS Device(2)">
+    <listeners>
+        <listener
+                class-name="qa.automation.listener.TestListener" />
+    </listeners>
+    <test name="Ui-testing">
+        <groups>
+            <run>
+                <exclude name="SM"></exclude>
+                <exclude name="sm"></exclude>
+                <exclude name="androidOnly"></exclude>
+                <exclude name="iOSFailure"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="qa.automation.testCase.mobile.MyProfileTestCases"/>
+            <class name="qa.automation.testCase.mobile.OrderPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.PDPTestCases"/>
+            <class name="qa.automation.testCase.mobile.SearchPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.NewOrderConfirmationPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.PromoTextTestCases"/>
+            <class name="qa.automation.testCase.mobile.PLPMobileTestCases"/>
+            <class name="qa.automation.testCase.mobile.RegisterPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.AddressPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.AppInstallationAndLaunchTestCases"/>
+            <class name="qa.automation.testCase.mobile.CartPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.CheckoutPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.CTInboxTestCases"/>
+            <class name="qa.automation.testCase.mobile.CategoryPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.DeeplinkTestCases"/>
+            <class name="qa.automation.testCase.mobile.DeleteAccountTestCases"/>
+            <class name="qa.automation.testCase.mobile.DiscountPositionTestCases"/>
+            <class name="qa.automation.testCase.mobile.DrawerTestCases"/>
+            <class name="qa.automation.testCase.mobile.FavoritesPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.HeaderTestCases"/>
+            <class name="qa.automation.testCase.mobile.HideVariantOptionsTestCases"/>
+            <class name="qa.automation.testCase.mobile.HomePageTestCases"/>
+            <class name="qa.automation.testCase.mobile.LoginTestCases"/>
+            <class name="qa.automation.testCase.mobile.MorePageTestCases"/>
+            <class name="qa.automation.testCase.mobile.MultiLanguageTestCases"/>
+            <class name="qa.automation.testCase.mobile.MultiStoreTestCases"/>
+            <class name="qa.automation.testCase.mobile.MenuLayoutsTestCases"/>
+        </classes>
+    </test>
+</suite>

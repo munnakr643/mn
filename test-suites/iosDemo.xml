@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo iOS run">
+    <listeners>
+        <listener
+                class-name="qa.automation.listener.TestListener" />
+    </listeners>
+    <test name="Ui-testing">
+        <classes>
+            <class name="qa.automation.testCase.mobile.CheckoutPageTestCases">
+                <methods>
+                    <include name="verifyNativeCheckout"></include>
+                </methods>
+            </class>
+            <class name="qa.automation.testCase.mobile.MultiStoreTestCases">
+                <methods>
+                    <include name="verifyAppOnlyDiscountForMultistore"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

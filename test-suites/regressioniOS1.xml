@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite 1">
+    <listeners>
+        <listener
+                class-name="qa.automation.listener.TestListener" />
+    </listeners>
+    <test name="Ui-testing">
+        <groups>
+            <run>
+                <exclude name="SM"></exclude>
+                <exclude name="sm"></exclude>
+                <exclude name="androidOnly"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="qa.automation.testCase.mobile.AddressPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.AppInstallationAndLaunchTestCases"/>
+            <class name="qa.automation.testCase.mobile.CartPageTestCases"/>
+
+            <class name="qa.automation.testCase.mobile.CategoryPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.CheckoutPageTestCases"/>
+            <class name="qa.automation.testCase.mobile.CTInboxTestCases"/>
+
+            <class name="qa.automation.testCase.mobile.DeeplinkTestCases"/>
+            <class name="qa.automation.testCase.mobile.DeleteAccountTestCases"/>
+            <class name="qa.automation.testCase.mobile.DiscountPositionTestCases"/>
+        </classes>
+    </test>
+</suite>

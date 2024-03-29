@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite for Android device">
+    <listeners>
+        <listener
+                class-name="qa.automation.listener.TestListener" />
+    </listeners>
+    <test name="Ui-testing">
+        <groups>
+            <run>
+                <exclude name="SM"></exclude>
+                <exclude name="sm"></exclude>
+                <exclude name="iOSOnly"></exclude>
+            </run>
+        </groups>
+        <packages>
+            <package name="qa.automation.testCase.mobile"/>
+        </packages>
+    </test>
+</suite>
