@@ -65,25 +65,9 @@ public class ReadConfig {
 		return ReadConfig.getMobilePlatformName().equalsIgnoreCase("Android");
 	}
 
-	public static String getPackageName() {
-		String packageName ;
-		if (BaseTest.appName.equalsIgnoreCase("neovo")){
-			 packageName = pro.getProperty("neovoPackageName");
-		}else {
-			 packageName = pro.getProperty("sandboxPackageName");
-		}
-		return packageName;
-	}
 
-	public static String getBundleId() {
-		String bundleId ;
-		if (BaseTest.appName.equalsIgnoreCase("neovo")){
-			bundleId = pro.getProperty("neovoBundleId");
-		}else {
-			bundleId = pro.getProperty("sandboxBundleId");
-		}
-		return bundleId;
-	}
+
+
 
 	public String getSafariBundleId() {
 		String bundleIdSafari = pro.getProperty("safariBundleId");
@@ -93,36 +77,6 @@ public class ReadConfig {
 	public static String getJiraProjectKey() {
 		String projectKey = pro.getProperty("jiraProjectKey");
 		return projectKey;
-	}
-
-	public String getBaseUrlForAndroid() {
-		String baseUrl ;
-		if (BaseTest.appName.equalsIgnoreCase("neovo")){
-			baseUrl = pro.getProperty("androidNeovoBaseUrl");
-		}else {
-			baseUrl = pro.getProperty("androidSandboxBaseUrl");
-		}
-		return baseUrl;
-	}
-
-	public String getBaseUrlForIos() {
-		String iosBaseUrl ;
-		if (BaseTest.appName.equalsIgnoreCase("neovo")){
-			iosBaseUrl = pro.getProperty("iosNeovoBaseUrl");
-		}else {
-			iosBaseUrl = pro.getProperty("iosSandboxBaseUrl");
-		}
-		return iosBaseUrl;
-	}
-
-	public static String getActvityName() {
-		String activityName ;
-		if (BaseTest.appName.equalsIgnoreCase("neovo")){
-			activityName = pro.getProperty("neovoAppActivityName");
-		}else {
-			activityName = pro.getProperty("sandboxAppActivityName");
-		}
-		return activityName;
 	}
 }
 
