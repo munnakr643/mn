@@ -31,14 +31,7 @@ public class MobileDriverManager {
 
 
     public static DesiredCapabilities capabilities() throws IOException {
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/global.properties");
-        Properties prop = new Properties();
-        prop.load(fis);
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        String platformName = System.getenv("platform");
-        String packageName;
-        String activityName;
-        String bundleName;
+       
 
         if (platformName.equalsIgnoreCase("Android")) {
             capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, (String) prop.get("deviceName"));
@@ -67,7 +60,6 @@ public class MobileDriverManager {
             }
             capabilities.setCapability("useNewWDA", false);
             capabilities.setCapability("platformVersion",  prop.getProperty("platformVersionIOS"));
-            capabilities.setCapability("deviceName", prop.getProperty("deviceNameIOS"));
             capabilities.setCapability("udid", prop.getProperty("udid")); //can use "auto" if only 1 device is connected
             capabilities.setCapability("newCommandTimeout", "100");
             if(appName.equalsIgnoreCase("neovo")){
@@ -97,9 +89,7 @@ public class MobileDriverManager {
 
 
     public static DesiredCapabilities browserStackCapabilities() throws IOException {
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/global.properties");
-        Properties prop = new Properties();
-        prop.load(fis);
+      
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserstack.user", userId);// Set your access credentials
         capabilities.setCapability("browserstack.key", accessKey);
@@ -111,39 +101,33 @@ public class MobileDriverManager {
         capabilities.setCapability("browserstack.idleTimeout", "210");
 
         if (System.getenv("platform").equalsIgnoreCase("Android")) {
-            String neovoAndroidAppBS = System.getenv("neovoAndroid");
-            String sandboxAndroidAppBS = System.getenv("sandboxAndroid");
+        
 
-            if (neovoAndroidAppBS.isEmpty() || sandboxAndroidAppBS.isEmpty()){
-                logger.info("Please add broweserStack app env name 'neovoAndroid and sandboxAndroid' and bs//: app key");
+            if (androidAppBS.isEmpty() || bndroidAppBS.isEmpty()){
                 System.exit(0);
             }else {
-                if(appName.equalsIgnoreCase("neovo")){
-                    capabilities.setCapability("app", neovoAndroidAppBS);// Set URL of the application under test
+                if(appName.equalsIgnoreCase("abcd")){
+                    capabilities.setCapability("app", abcd);// Set URL of the application under test
                 }else {
-                    capabilities.setCapability("app",sandboxAndroidAppBS);
+                    capabilities.setCapability("app",sbcd);
                 }
             }
-            capabilities.setCapability("os_version", prop.getProperty("platformVersionBS"));
-            capabilities.setCapability("device", prop.getProperty("deviceNameBS"));// Specify device and os_version for testing
+        
             capabilities.setCapability("autoGrantPermissions", "true");
         }
         else {
-            String neovoiOSAppBS = System.getenv("neovoiOS");
-            String sandboxiOSAppBS = System.getenv("sandboxiOS");
 
             if (neovoiOSAppBS.isEmpty() || sandboxiOSAppBS.isEmpty()){
                 logger.info("Please add broweserStack app env name 'neovoiOS and sandboxiOS' and bs//: app key");
                 System.exit(0);
             }else {
-                if(appName.equalsIgnoreCase("neovo")){
-                    capabilities.setCapability("app", neovoiOSAppBS);
+                if(appName.equalsIgnoreCase("app")){
+                    capabilities.setCapability("app", app);
                 }else {
-                    capabilities.setCapability("app", sandboxiOSAppBS);
+                    capabilities.setCapability("app", sbcd);
                 }
             }
-            capabilities.setCapability("os_version", prop.getProperty("platformVersionBSiOS"));
-            capabilities.setCapability("device", prop.getProperty("deviceNameBSiOS"));
+            
             capabilities.setCapability("autoAcceptAlerts", "true");
         }
         logger.info("Capabilities: "+ capabilities);
