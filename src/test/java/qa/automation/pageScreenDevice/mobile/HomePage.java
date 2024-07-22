@@ -1,4 +1,4 @@
-package qa.automation.pageScreenDevice;
+package qa.automation.pageScreenDevice.mobile;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
